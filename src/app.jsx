@@ -93,7 +93,7 @@ function App(){
     return(<>
     <div className = "full">
         <h1 id='title'>Don't Guess Me</h1>
-        <p id='gamerule'>Using the hint for a secret color, you must completely avoid guessing it for 5 rounds to win. One wrong guess means game over!</p>
+        <p id='gamerule'>Using the hint for a secret color, you must completely avoid guessing it 5 times to win. One Correct guess means game over!</p>
         <div className = {`box ${boxflag? "finished":"playing"}`} style={{backgroundColor: boxflag? allColors[randint].hex:""}}>
             {boxflag? <h3>{allColors[randint].name.toUpperCase()}</h3>: <p> Hint: {allColors[randint].description}</p>}
         </div>
