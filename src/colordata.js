@@ -1,4 +1,4 @@
-export const allColors = [
+export const Colorsarrays = [
   {
     name: "Red",
     description: "It is the primary stain on the hands of the Macduff family, yet the blind judge's traditional robe denies it in favor of its darker cousin.",

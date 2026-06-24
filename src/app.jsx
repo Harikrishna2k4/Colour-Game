@@ -1,25 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './index.css';
-import { allColors } from './colordata';
+import { Colorsarrays } from './colordata';
+const no_of_elements = 7;
+function randarray(){
+    const result = new Array(no_of_elements);
+    for(let j = 0; j<result.length; j++){
+        while(true){
+            let flag = false;
+            let colorobject = Colorsarrays[Math.floor(Math.random() * Colorsarrays.length)];
+            for(const i of result){
+                if(i === colorobject){
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag === false){
+                result[j] = colorobject;
+                break;
+            } 
+        }
+    }
+     return result;   
+};
 
- 
 function App(){
     const [chances,setChance] = useState(0);
     const [loseflag,setLoseflag] = useState(false);
     const [winflag,setWinflag] = useState(false);
     const [arr,setArr] = useState(["red","red","red","red","red"]);
-    const [randint,setRandint] = useState(Math.floor(Math.random() * allColors.length));
+    const [randint,setRandint] = useState(Math.floor(Math.random() * no_of_elements));
     const [boxflag,setBoxflag] = useState(false);
     const [restart,setRestart] = useState(false);
     const[checkedarray,setCheckedarray]= useState(["","","","",""]);
     const [selectedcolor, setSelectedcolor] = useState("");
-   
+    const [allColors, setAllcolors] = useState(()=> {return randarray();});
+
     function checkClick(event){
         if(allColors[randint].name === selectedcolor){
             setBoxflag(true);
             setTimeout(() => {setLoseflag(true);},2000)
             return;
-            
         }
         for(const checkedcolor of checkedarray){
             if(checkedcolor === selectedcolor){
@@ -54,11 +74,16 @@ function App(){
         setBoxflag(false);
         setLoseflag(false);
         setChance(0);
-        setRandint(Math.floor(Math.random() * allColors.length));
+        setRandint(Math.floor(Math.random() * no_of_elements));
         setWinflag(false);
         setArr(["red", "red", "red", "red", "red"]);  
         setCheckedarray(["","","","",""]);
         setSelectedcolor("");
+        setAllcolors(randarray());
+        const radioButtons = document.getElementsByClassName("color-checkbox");
+        for (let rb of radioButtons) {
+            rb.checked = false;
+        }
     }
 
     function HandleCheckBox(event){
@@ -88,12 +113,25 @@ function App(){
                 <button id="restartBtn" onClick={HandleRestart}>Restart</button>
             </dialog>
         )}
-        {winflag && (
+        {winflag && (<>
+            <div className="win-overlay">
+            {[...Array(100)].map((_, i) => (
+                <span
+                    key={i}
+                    className="confetti"
+                    style={{
+                        left: `${Math.random() * 100}%`,
+                        animationDelay: `${Math.random() * 3}s`
+                    }}
+                />
+            ))}
+            </div>
             <dialog open>
                 <h3>Congragulations!</h3>
                 <p>You won</p>
                 <button id="restartBtn" onClick={HandleRestart}>Restart</button>
             </dialog>
+            </>
         )}
         <br></br>
         <button className='check' onClick={checkClick}> Check </button>

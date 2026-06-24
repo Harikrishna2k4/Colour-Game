@@ -7,11 +7,11 @@ html, body {
 }
 
 .box{
-    height: 50vw;
-    width: 50vw;
+    height: 60vw;
+    width: 60vw;
     aspect-ratio: 1 / 1 !important;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 350px;
+    max-height: 350px;
     border: 3px solid rgb(202, 14, 158);
     background-color: aqua;
     border-radius: 50%;
@@ -27,59 +27,6 @@ html, body {
     justify-content: center;
     text-align: center;
 }
-@media screen and (min-width: 1100px) and (max-width: 5000px) {
-    .box {
-        width: 70vw;
-        height: 70vw;
-        max-width: 250px ;
-        max-height: 250px;
-        padding: 24px;
-        border-width: 5px;
-        border-radius: 50%;
-}
-.box.finished h3 {
-    transform: rotateY(180deg);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    color: #ffffff;
-    mix-blend-mode: difference;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px  ;
-}
-.box.playing p {
-    transform: rotateY(0deg);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    color: rgb(183, 19, 145);
-    font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:large ;
-}
-}
-@media screen and (min-width: 700px) and (max-width: 1100px) {
-    .box {
-        width: 40vw ;
-        height: 40vw ;
-        max-width: 200px;
-        max-height: 200px;
-        padding: 24px;
-        border-width: 5px;
-        border-radius: 50%;
-}
-.box.finished h3 {
-    transform: rotateY(180deg);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    color: #ffffff;
-    mix-blend-mode: difference;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px  ;
-}
-.box.playing p {
-    transform: rotateY(0deg);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    color: rgb(183, 19, 145);
-    font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:20 ;
-}}
 .box.playing{
     transform: scale(0.95) rotateY(0deg);
 }
@@ -100,8 +47,64 @@ html, body {
     color: rgb(187, 21, 148);
     font-weight: bold;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:x-small;
+    font-size:12px;
 }
+
+@media screen and (min-width: 1100px) and (max-width: 2000px) {
+    .box {
+        width: 60vw ;
+        height: 60vw ;
+        max-width: 300px;
+        max-height: 300px;
+        aspect-ratio: 1/1 !important;
+        padding: 24px;
+        border-width: 5px;
+        border-radius: 50%;
+}
+.box.finished h3 {
+    transform: rotateY(180deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: #ffffff;
+    mix-blend-mode: difference;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px ;
+}
+.box.playing p {
+    transform: rotateY(0deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: rgb(183, 19, 145);
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:15px !important;
+}
+}
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+    .box {
+        width: 60vw ;
+        height: 60vw ;
+        max-width: 200px;
+        max-height: 200px;
+        aspect-ratio: 1/1 !important;
+        padding: 24px;
+        border-width: 5px;
+        border-radius: 50%;
+}
+.box.finished h3 {
+    transform: rotateY(180deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: #ffffff;
+    mix-blend-mode: difference;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px  ;
+}
+.box.playing p {
+    transform: rotateY(0deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: rgb(183, 19, 145);
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12px !important;
+}}
 
 
 .full{
@@ -118,6 +121,7 @@ html, body {
     padding-top: 10px;
     margin: 3px;
     color: black;
+    font-size: 35px;
 }
 @media screen and (min-width: 700px) and (max-width: 1100px) {
 #title{
@@ -130,10 +134,10 @@ html, body {
 }
 #gamerule{
     color: #000000;
-    font-size:x-small;
+    font-size:small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 0px;
-    margin: 0px;
+    padding: 3px;
+    margin: 3px;
     margin-bottom: 5px;
     max-width: 80vw;
     font-weight: bold;
@@ -324,7 +328,7 @@ dialog p {
 .color-box-container {
     width: var(--box-size);
     max-width: var(--max-box-width);
-    height: 400px;
+    height: auto;
     border: 2px solid rgb(202, 14, 158);
     border-radius: 8px;
     padding: 12px;
@@ -341,9 +345,9 @@ dialog p {
 }
 @media screen and (min-width: 700px) and (max-width: 1100px) {
 .color-box-container {
-    width: var(--box-size);
-    max-width: var(--max-box-width);
-    height: 400px;
+    width: 500px;
+    max-width: 600px;
+    height: auto;
     border: 2px solid rgb(202, 14, 158);
     border-radius: 8px;
     padding: 12px;
@@ -351,16 +355,16 @@ dialog p {
     overflow-y: auto;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     align-content: start;
 }
 }
 @media screen and (min-width: 1100px) and (max-width: 5000px) {
 .color-box-container {
-    width: var(--box-size);
-    max-width: var(--max-box-width);
-    height: 400px;
+    width: 900px ;
+    max-width: 1000px;
+    height: 200px;
     border: 2px solid rgb(202, 14, 158);
     border-radius: 8px;
     padding: 12px;
@@ -368,7 +372,7 @@ dialog p {
     overflow-y: auto;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     align-content: start;
 }
@@ -473,5 +477,49 @@ dialog p {
     .color-square {
         width: 16px;
         height: 16px;
+    }
+}
+
+.win-overlay {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+    background: rgba(0,0,0,0.15);
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    animation: fall 4s linear infinite;
+}
+
+.confetti:nth-child(5n) {
+    background: red;
+}
+.confetti:nth-child(5n+1) {
+    background: yellow;
+}
+.confetti:nth-child(5n+2) {
+    background: blue;
+}
+.confetti:nth-child(5n+3) {
+    background: lime;
+}
+.confetti:nth-child(5n+4) {
+    background: magenta;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(120vh) rotate(720deg);
     }
 }
